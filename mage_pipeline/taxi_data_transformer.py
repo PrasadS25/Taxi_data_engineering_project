@@ -8,20 +8,7 @@ if 'test' not in globals():
 
 @transformer
 def transform(df, *args, **kwargs):
-    """
-    Template code for a transformer block.
 
-    Add more parameters to this function if this block has multiple parent blocks.
-    There should be one parameter for each output variable from each parent block.
-
-    Args:
-        data: The output from the upstream parent block
-        args: The output from any additional upstream blocks (if applicable)
-
-    Returns:
-        Anything (e.g. data frame, dictionary, array, int, str, etc.)
-    """
-    # Specify your transformation logic here
     # df = data.to_pandas()
     # print(data.head())
     # df = df.drop_duplicates().reset_index(drop=True)
@@ -109,24 +96,6 @@ def transform(df, *args, **kwargs):
 
     print('Tranformation Done')
 
-    # return {"datetime_dim":datetime_dim.to_dict(orient="dict"),
-    # "passenger_count_dim":passenger_count_dim.to_dict(orient="dict"),
-    # "trip_distance_dim":trip_distance_dim.to_dict(orient="dict"),
-    # "rate_code_dim":rate_code_dim.to_dict(orient="dict"),
-    # "pickup_location_dim":pickup_location_dim.to_dict(orient="dict"),
-    # "dropoff_location_dim":dropoff_location_dim.to_dict(orient="dict"),
-    # "payment_type_dim":payment_type_dim.to_dict(orient="dict"),
-    # "main_table":main_table.to_dict(orient="dict")}
-    # return {
-    #     "datetime_dim": datetime_dim.to_dict(orient="dict"),
-    #     "passenger_count_dim": passenger_count_dim.to_dict(orient="dict"),
-    #     "trip_distance_dim": trip_distance_dim.to_dict(orient="dict"),
-    #     "rate_code_dim": rate_code_dim.to_dict(orient="dict"),
-    #     "pickup_location_dim": pickup_location_dim.to_dict(orient="dict"),
-    #     "dropoff_location_dim": dropoff_location_dim.to_dict(orient="dict"),
-    #     "payment_type_dim": payment_type_dim.to_dict(orient="dict"),
-    #     "main_table": main_table.to_dict(orient="dict")
-    # }
     return {
         "datetime_dim": datetime_dim,
         "passenger_count_dim": passenger_count_dim,
@@ -138,12 +107,3 @@ def transform(df, *args, **kwargs):
         "main_table": main_table
     }
 
-
-
-@test
-def test_output(output, *args) -> None:
-    """
-    Template code for testing the output of the block.
-    """
-    print(output)
-    assert output is not None, 'The output is undefined'
